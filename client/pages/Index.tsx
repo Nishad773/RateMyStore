@@ -10,17 +10,26 @@ export default function Index() {
         <h1 className="text-4xl/tight font-extrabold tracking-tight sm:text-5xl">
           Rate stores with role‑based dashboards
         </h1>
-        <p className="text-muted-foreground text-lg">
-          Minimal, modern React + Tailwind app with Axios, auth, and sortable tables. Admin, User, and Owner experiences included.
-        </p>
         <div className="flex flex-wrap gap-3">
           <Link to="/signup" className="rounded-md bg-primary px-5 py-2.5 text-primary-foreground font-medium">Get started</Link>
           <Link to="/login" className="rounded-md border px-5 py-2.5">Sign in</Link>
         </div>
         <ul className="grid gap-3 sm:grid-cols-2 text-sm">
-          <li className="rounded-lg border p-4"><b>Admin</b> • Stats + users/stores tables</li>
-          <li className="rounded-lg border p-4"><b>User</b> • Search, rate, and update ratings</li>
-          <li className="rounded-lg border p-4"><b>Owner</b> • View store averages and ratings</li>
+          <li className="rounded-lg border p-0 overflow-hidden">
+            <Link to="/admin" className="block p-4 hover:bg-accent/50">
+              <b>Admin</b> • Stats + users/stores tables
+            </Link>
+          </li>
+          <li className="rounded-lg border p-0 overflow-hidden">
+            <Link to="/dashboard" className="block p-4 hover:bg-accent/50">
+              <b>User</b> • Search, rate, and update ratings
+            </Link>
+          </li>
+          <li className="rounded-lg border p-0 overflow-hidden">
+            <Link to="/owner" className="block p-4 hover:bg-accent/50">
+              <b>Owner</b> • View store averages and ratings
+            </Link>
+          </li>
           <li className="rounded-lg border p-4">Validations • Name, address, password, email</li>
         </ul>
         <div className="text-xs text-muted-foreground">
