@@ -5,6 +5,7 @@ import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { motion } from "framer-motion";
 import {
   BrowserRouter,
   Routes,
@@ -41,11 +42,18 @@ function Protected({
 function Layout({ children }: { children: React.ReactNode }) {
   const role = getRole();
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted/30">
+    <div className="relative min-h-screen bg-gradient-to-br from-background to-muted/30">
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-40 [mask-image:radial-gradient(60%_60%_at_50%_0%,#000_40%,transparent_70%)]">
+        <div className="absolute -top-20 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-gradient-to-br from-primary/30 via-fuchsia-500/20 to-emerald-500/20 blur-3xl" />
+      </div>
       <header className="sticky top-0 z-20 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center justify-between">
           <Link to="/" className="flex items-center gap-2 font-bold">
-            <span className="inline-block h-6 w-6 rounded bg-primary" />
+            <motion.span
+              whileHover={{ rotate: 10, scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block h-6 w-6 rounded bg-gradient-to-br from-primary via-fuchsia-500 to-emerald-500 shadow-sm"
+            />
             RateMyStore
           </Link>
           <nav className="flex items-center gap-4 text-sm">
