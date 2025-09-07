@@ -33,7 +33,7 @@ export default function StoreCard(props: StoreCardProps) {
   };
 
   return (
-    <div className="rounded-xl border bg-card p-5 shadow-sm">
+    <div className="rounded-xl border bg-card p-5 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md hover:border-primary/30">
       <div className="flex items-start justify-between gap-4">
         <div>
           <h3 className="text-lg font-semibold">{name}</h3>
