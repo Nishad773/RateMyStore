@@ -136,24 +136,24 @@ export default function Index() {
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 0.4 }}
             >
-            <div className="mb-2 flex items-center gap-2 text-muted-foreground">
-              <Users className="h-4 w-4" /> Admin
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div>
-                <div className="text-sm">Stats overview</div>
-                <div className="text-xs text-muted-foreground">
-                  Users, stores, and ratings
+              <div className="mb-2 flex items-center gap-2 text-muted-foreground">
+                <Users className="h-4 w-4" /> Admin
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div>
+                  <div className="text-sm">Stats overview</div>
+                  <div className="text-xs text-muted-foreground">
+                    Users, stores, and ratings
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm">Powerful tables</div>
+                  <div className="text-xs text-muted-foreground">
+                    Sortable, filterable data
+                  </div>
                 </div>
               </div>
-              <div>
-                <div className="text-sm">Powerful tables</div>
-                <div className="text-xs text-muted-foreground">
-                  Sortable, filterable data
-                </div>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
           </Link>
 
           <Link to="/login" aria-label="Owner login" className="block group">
@@ -164,24 +164,24 @@ export default function Index() {
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 0.4, delay: 0.05 }}
             >
-            <div className="mb-2 flex items-center gap-2 text-muted-foreground">
-              <Store className="h-4 w-4" /> Owner
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div>
-                <div className="text-sm">Your stores at a glance</div>
-                <div className="text-xs text-muted-foreground">
-                  Averages and rating history
+              <div className="mb-2 flex items-center gap-2 text-muted-foreground">
+                <Store className="h-4 w-4" /> Owner
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div>
+                  <div className="text-sm">Your stores at a glance</div>
+                  <div className="text-xs text-muted-foreground">
+                    Averages and rating history
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm">Trends</div>
+                  <div className="text-xs text-muted-foreground">
+                    Spot peaks and dips quickly
+                  </div>
                 </div>
               </div>
-              <div>
-                <div className="text-sm">Trends</div>
-                <div className="text-xs text-muted-foreground">
-                  Spot peaks and dips quickly
-                </div>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
           </Link>
 
           <Link to="/login" aria-label="User login" className="block group">
@@ -192,24 +192,24 @@ export default function Index() {
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-            <div className="mb-2 flex items-center gap-2 text-muted-foreground">
-              <Star className="h-4 w-4" /> User
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div>
-                <div className="text-sm">Search & rate</div>
-                <div className="text-xs text-muted-foreground">
-                  Simple star ratings with updates
+              <div className="mb-2 flex items-center gap-2 text-muted-foreground">
+                <Star className="h-4 w-4" /> User
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div>
+                  <div className="text-sm">Search & rate</div>
+                  <div className="text-xs text-muted-foreground">
+                    Simple star ratings with updates
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm">Clean results</div>
+                  <div className="text-xs text-muted-foreground">
+                    Fast filtering and clear cards
+                  </div>
                 </div>
               </div>
-              <div>
-                <div className="text-sm">Clean results</div>
-                <div className="text-xs text-muted-foreground">
-                  Fast filtering and clear cards
-                </div>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
           </Link>
         </div>
       </section>
