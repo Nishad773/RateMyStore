@@ -19,7 +19,8 @@ export default function Index() {
             transition={{ duration: 0.5 }}
           >
             <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-muted-foreground">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" /> Live demo challenge
+              <span className="h-2 w-2 rounded-full bg-emerald-500" /> Live demo
+              challenge
             </span>
             <h1 className="text-balance text-5xl font-extrabold tracking-tight sm:text-6xl">
               <span className="bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
@@ -27,22 +28,34 @@ export default function Index() {
               </span>
             </h1>
             <p className="max-w-prose text-muted-foreground">
-              Clean, performant, and accessible. Role‑based dashboards for admins, owners, and users with a focus on delightful micro‑interactions.
+              Clean, performant, and accessible. Role‑based dashboards for
+              admins, owners, and users with a focus on delightful
+              micro‑interactions.
             </p>
             <div className="flex flex-wrap gap-3">
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                <Link to="/signup" className="rounded-md bg-primary px-5 py-2.5 font-medium text-primary-foreground shadow-md hover:shadow-lg">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link
+                  to="/signup"
+                  className="rounded-md bg-primary px-5 py-2.5 font-medium text-primary-foreground shadow-md hover:shadow-lg"
+                >
                   Get started
                 </Link>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+              >
                 <Link to="/login" className="rounded-md border px-5 py-2.5">
                   Sign in
                 </Link>
               </motion.div>
             </div>
             <div className="text-xs text-muted-foreground">
-              Seed accounts: admin@example.com / Admin#1234 • owner@example.com / Owner#1234 • user@example.com / User#1234
+              Seed accounts: admin@example.com / Admin#1234 • owner@example.com
+              / Owner#1234 • user@example.com / User#1234
             </div>
           </motion.div>
 
@@ -59,21 +72,29 @@ export default function Index() {
                 <div className="flex items-center justify-between rounded-xl border p-4 transition-transform hover:-translate-y-0.5">
                   <div>
                     <div className="font-semibold">Aurora Coffee Roasters</div>
-                    <div className="text-xs text-muted-foreground">123 Bean Blvd, Brew City</div>
+                    <div className="text-xs text-muted-foreground">
+                      123 Bean Blvd, Brew City
+                    </div>
                   </div>
                   <div className="text-right">
                     <div className="text-2xl font-bold">4.6</div>
-                    <div className="text-xs text-muted-foreground">128 ratings</div>
+                    <div className="text-xs text-muted-foreground">
+                      128 ratings
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center justify-between rounded-xl border p-4 transition-transform hover:-translate-y-0.5">
                   <div>
                     <div className="font-semibold">Luna Bookstore & Cafe</div>
-                    <div className="text-xs text-muted-foreground">456 Story Ave, Readtown</div>
+                    <div className="text-xs text-muted-foreground">
+                      456 Story Ave, Readtown
+                    </div>
                   </div>
                   <div className="text-right">
                     <div className="text-2xl font-bold">4.2</div>
-                    <div className="text-xs text-muted-foreground">87 ratings</div>
+                    <div className="text-xs text-muted-foreground">
+                      87 ratings
+                    </div>
                   </div>
                 </div>
               </div>
@@ -86,7 +107,11 @@ export default function Index() {
       <section className="relative">
         <div className="rounded-xl border bg-card p-2">
           <Marquee
-            items={["Rate • Review • Discover", "Admin • Owner • User", "Fast • Accessible • Beautiful"]}
+            items={[
+              "Rate • Review • Discover",
+              "Admin • Owner • User",
+              "Fast • Accessible • Beautiful",
+            ]}
             className="text-sm"
             speed={22}
           />
@@ -98,7 +123,8 @@ export default function Index() {
         <div className="lg:sticky lg:top-24">
           <h2 className="text-2xl font-bold">Three focused dashboards</h2>
           <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-            Inspired by expressive, architectural layouts—kept practical and robust. Subtle motion, strong typography, and clear hierarchy.
+            Inspired by expressive, architectural layouts—kept practical and
+            robust. Subtle motion, strong typography, and clear hierarchy.
           </p>
         </div>
         <div className="lg:col-span-2 space-y-4">
@@ -115,11 +141,15 @@ export default function Index() {
             <div className="grid gap-3 sm:grid-cols-2">
               <div>
                 <div className="text-sm">Stats overview</div>
-                <div className="text-xs text-muted-foreground">Users, stores, and ratings</div>
+                <div className="text-xs text-muted-foreground">
+                  Users, stores, and ratings
+                </div>
               </div>
               <div>
                 <div className="text-sm">Powerful tables</div>
-                <div className="text-xs text-muted-foreground">Sortable, filterable data</div>
+                <div className="text-xs text-muted-foreground">
+                  Sortable, filterable data
+                </div>
               </div>
             </div>
           </motion.div>
@@ -137,11 +167,15 @@ export default function Index() {
             <div className="grid gap-3 sm:grid-cols-2">
               <div>
                 <div className="text-sm">Your stores at a glance</div>
-                <div className="text-xs text-muted-foreground">Averages and rating history</div>
+                <div className="text-xs text-muted-foreground">
+                  Averages and rating history
+                </div>
               </div>
               <div>
                 <div className="text-sm">Trends</div>
-                <div className="text-xs text-muted-foreground">Spot peaks and dips quickly</div>
+                <div className="text-xs text-muted-foreground">
+                  Spot peaks and dips quickly
+                </div>
               </div>
             </div>
           </motion.div>
@@ -159,11 +193,15 @@ export default function Index() {
             <div className="grid gap-3 sm:grid-cols-2">
               <div>
                 <div className="text-sm">Search & rate</div>
-                <div className="text-xs text-muted-foreground">Simple star ratings with updates</div>
+                <div className="text-xs text-muted-foreground">
+                  Simple star ratings with updates
+                </div>
               </div>
               <div>
                 <div className="text-sm">Clean results</div>
-                <div className="text-xs text-muted-foreground">Fast filtering and clear cards</div>
+                <div className="text-xs text-muted-foreground">
+                  Fast filtering and clear cards
+                </div>
               </div>
             </div>
           </motion.div>

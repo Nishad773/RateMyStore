@@ -8,7 +8,12 @@ interface MarqueeProps {
   direction?: "left" | "right";
 }
 
-export function Marquee({ items, className, speed = 18, direction = "left" }: MarqueeProps) {
+export function Marquee({
+  items,
+  className,
+  speed = 18,
+  direction = "left",
+}: MarqueeProps) {
   const xFrom = direction === "left" ? "0%" : "-50%";
   const xTo = direction === "left" ? "-50%" : "0%";
   return (
@@ -25,9 +30,15 @@ export function Marquee({ items, className, speed = 18, direction = "left" }: Ma
         transition={{ duration: speed, ease: "linear", repeat: Infinity }}
       >
         {[0, 1].map((row) => (
-          <div key={row} className="flex w-1/2 shrink-0 items-center justify-around gap-8">
+          <div
+            key={row}
+            className="flex w-1/2 shrink-0 items-center justify-around gap-8"
+          >
             {items.map((it, i) => (
-              <div key={`${row}-${i}`} className="text-sm text-muted-foreground">
+              <div
+                key={`${row}-${i}`}
+                className="text-sm text-muted-foreground"
+              >
                 {it}
               </div>
             ))}

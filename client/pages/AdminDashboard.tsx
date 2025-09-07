@@ -47,7 +47,9 @@ export default function AdminDashboard() {
           <div className="flex items-center justify-between">
             <div>
               <div className="text-sm text-muted-foreground">Stores</div>
-              <div className="text-2xl font-bold">{stats?.totalStores ?? 0}</div>
+              <div className="text-2xl font-bold">
+                {stats?.totalStores ?? 0}
+              </div>
             </div>
             <div className="rounded-full border p-2 text-muted-foreground">
               <Store className="h-5 w-5" />
@@ -59,7 +61,9 @@ export default function AdminDashboard() {
           <div className="flex items-center justify-between">
             <div>
               <div className="text-sm text-muted-foreground">Ratings</div>
-              <div className="text-2xl font-bold">{stats?.totalRatings ?? 0}</div>
+              <div className="text-2xl font-bold">
+                {stats?.totalRatings ?? 0}
+              </div>
             </div>
             <div className="rounded-full border p-2 text-muted-foreground">
               <Star className="h-5 w-5" />
