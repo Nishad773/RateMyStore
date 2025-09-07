@@ -128,13 +128,14 @@ export default function Index() {
           </p>
         </div>
         <div className="lg:col-span-2 space-y-4">
-          <motion.div
-            className="rounded-xl border p-5 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-20%" }}
-            transition={{ duration: 0.4 }}
-          >
+          <Link to="/login" aria-label="Admin login" className="block group">
+            <motion.div
+              className="rounded-xl border p-5 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-transform group-hover:-translate-y-0.5"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-20%" }}
+              transition={{ duration: 0.4 }}
+            >
             <div className="mb-2 flex items-center gap-2 text-muted-foreground">
               <Users className="h-4 w-4" /> Admin
             </div>
@@ -153,14 +154,16 @@ export default function Index() {
               </div>
             </div>
           </motion.div>
+          </Link>
 
-          <motion.div
-            className="rounded-xl border p-5"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-20%" }}
-            transition={{ duration: 0.4, delay: 0.05 }}
-          >
+          <Link to="/login" aria-label="Owner login" className="block group">
+            <motion.div
+              className="rounded-xl border p-5 transition-transform group-hover:-translate-y-0.5"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-20%" }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+            >
             <div className="mb-2 flex items-center gap-2 text-muted-foreground">
               <Store className="h-4 w-4" /> Owner
             </div>
@@ -179,14 +182,16 @@ export default function Index() {
               </div>
             </div>
           </motion.div>
+          </Link>
 
-          <motion.div
-            className="rounded-xl border p-5"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-20%" }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-          >
+          <Link to="/login" aria-label="User login" className="block group">
+            <motion.div
+              className="rounded-xl border p-5 transition-transform group-hover:-translate-y-0.5"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-20%" }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
             <div className="mb-2 flex items-center gap-2 text-muted-foreground">
               <Star className="h-4 w-4" /> User
             </div>
@@ -205,6 +210,7 @@ export default function Index() {
               </div>
             </div>
           </motion.div>
+          </Link>
         </div>
       </section>
     </div>
