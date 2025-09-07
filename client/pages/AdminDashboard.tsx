@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
 import Table from "@/components/Table";
+import { Users, Store, Star } from "lucide-react";
 
 interface Stats {
   totalUsers: number;
