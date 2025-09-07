@@ -30,17 +30,41 @@ export default function AdminDashboard() {
   return (
     <div className="space-y-8">
       <div className="grid gap-4 sm:grid-cols-3">
-        <div className="rounded-xl border p-4">
-          <div className="text-sm text-muted-foreground">Users</div>
-          <div className="text-2xl font-bold">{stats?.totalUsers ?? 0}</div>
+        <div className="relative overflow-hidden rounded-xl border p-4">
+          <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-gradient-to-br from-primary/20 via-fuchsia-500/10 to-transparent blur-2xl" />
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-sm text-muted-foreground">Users</div>
+              <div className="text-2xl font-bold">{stats?.totalUsers ?? 0}</div>
+            </div>
+            <div className="rounded-full border p-2 text-muted-foreground">
+              <Users className="h-5 w-5" />
+            </div>
+          </div>
         </div>
-        <div className="rounded-xl border p-4">
-          <div className="text-sm text-muted-foreground">Stores</div>
-          <div className="text-2xl font-bold">{stats?.totalStores ?? 0}</div>
+        <div className="relative overflow-hidden rounded-xl border p-4">
+          <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-gradient-to-br from-emerald-500/20 via-primary/10 to-transparent blur-2xl" />
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-sm text-muted-foreground">Stores</div>
+              <div className="text-2xl font-bold">{stats?.totalStores ?? 0}</div>
+            </div>
+            <div className="rounded-full border p-2 text-muted-foreground">
+              <Store className="h-5 w-5" />
+            </div>
+          </div>
         </div>
-        <div className="rounded-xl border p-4">
-          <div className="text-sm text-muted-foreground">Ratings</div>
-          <div className="text-2xl font-bold">{stats?.totalRatings ?? 0}</div>
+        <div className="relative overflow-hidden rounded-xl border p-4">
+          <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-gradient-to-br from-yellow-400/20 via-primary/10 to-transparent blur-2xl" />
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-sm text-muted-foreground">Ratings</div>
+              <div className="text-2xl font-bold">{stats?.totalRatings ?? 0}</div>
+            </div>
+            <div className="rounded-full border p-2 text-muted-foreground">
+              <Star className="h-5 w-5" />
+            </div>
+          </div>
         </div>
       </div>
       <section className="space-y-3">
