@@ -20,7 +20,7 @@ export default function OwnerDashboard() {
       <h1 className="text-2xl font-bold">Your Stores</h1>
       <div className="grid gap-4 sm:grid-cols-2">
         {data?.stores.map((s) => (
-          <div key={s.id} className="rounded-xl border p-4">
+          <div key={s.id} className="rounded-xl border p-4 transition-transform hover:-translate-y-0.5 hover:shadow-md">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="font-semibold">{s.name}</h3>
