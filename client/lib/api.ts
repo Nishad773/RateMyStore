@@ -24,5 +24,5 @@ export function clearSession() {
 }
 
 export function getRole() {
-  return (localStorage.getItem("role") || "");
+  return localStorage.getItem("role") || "";
 }

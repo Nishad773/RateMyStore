@@ -13,7 +13,11 @@ const schema = z.object({
 
 export default function Login() {
   const nav = useNavigate();
-  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<z.infer<typeof schema>>({ resolver: zodResolver(schema) });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<z.infer<typeof schema>>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (values: z.infer<typeof schema>) => {
     const res = await api.post("/auth/login", values);
@@ -28,20 +32,41 @@ export default function Login() {
     <div className="mx-auto max-w-md space-y-6">
       <div className="text-center space-y-2">
         <h1 className="text-3xl font-bold">Welcome back</h1>
-        <p className="text-muted-foreground">Sign in to rate stores and manage your dashboard.</p>
+        <p className="text-muted-foreground">
+          Sign in to rate stores and manage your dashboard.
+        </p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
           <Input placeholder="Email" type="email" {...register("email")} />
-          {errors.email && <p className="text-sm text-destructive mt-1">{errors.email.message}</p>}
+          {errors.email && (
+            <p className="text-sm text-destructive mt-1">
+              {errors.email.message}
+            </p>
+          )}
         </div>
         <div>
-          <Input placeholder="Password" type="password" {...register("password")} />
-          {errors.password && <p className="text-sm text-destructive mt-1">{errors.password.message}</p>}
+          <Input
+            placeholder="Password"
+            type="password"
+            {...register("password")}
+          />
+          {errors.password && (
+            <p className="text-sm text-destructive mt-1">
+              {errors.password.message}
+            </p>
+          )}
         </div>
-        <Button type="submit" className="w-full" disabled={isSubmitting}>{isSubmitting ? "Signing in..." : "Sign In"}</Button>
+        <Button type="submit" className="w-full" disabled={isSubmitting}>
+          {isSubmitting ? "Signing in..." : "Sign In"}
+        </Button>
       </form>
-      <p className="text-center text-sm text-muted-foreground">No account? <a className="text-primary underline" href="/signup">Create one</a></p>
+      <p className="text-center text-sm text-muted-foreground">
+        No account?{" "}
+        <a className="text-primary underline" href="/signup">
+          Create one
+        </a>
+      </p>
     </div>
   );
 }

@@ -1,9 +1,27 @@
 import { z } from "zod";
 
 export type Role = "admin" | "user" | "owner";
-export interface User { id: string; name: string; email: string; password: string; role: Role; storeId?: string }
-export interface Store { id: string; name: string; address: string; ownerId: string }
-export interface Rating { id: string; userId: string; storeId: string; value: number; createdAt: number }
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  role: Role;
+  storeId?: string;
+}
+export interface Store {
+  id: string;
+  name: string;
+  address: string;
+  ownerId: string;
+}
+export interface Rating {
+  id: string;
+  userId: string;
+  storeId: string;
+  value: number;
+  createdAt: number;
+}
 
 export const validators = {
   name: z.string().min(20).max(60),
@@ -55,8 +73,18 @@ const user: User = {
 
 db.users.push(admin, owner, user);
 
-const store1: Store = { id: uid("str"), name: "Aurora Coffee Roasters", address: "123 Bean Blvd, Brew City", ownerId: owner.id };
-const store2: Store = { id: uid("str"), name: "Luna Bookstore & Cafe", address: "456 Story Ave, Readtown", ownerId: owner.id };
+const store1: Store = {
+  id: uid("str"),
+  name: "Aurora Coffee Roasters",
+  address: "123 Bean Blvd, Brew City",
+  ownerId: owner.id,
+};
+const store2: Store = {
+  id: uid("str"),
+  name: "Luna Bookstore & Cafe",
+  address: "456 Story Ave, Readtown",
+  ownerId: owner.id,
+};
 
 db.stores.push(store1, store2);
 
@@ -70,7 +98,12 @@ export function parseToken(token?: string) {
   if (!token) return null;
   try {
     const json = Buffer.from(token, "base64url").toString("utf8");
-    return JSON.parse(json) as { id: string; role: Role; email: string; name: string };
+    return JSON.parse(json) as {
+      id: string;
+      role: Role;
+      email: string;
+      name: string;
+    };
   } catch {
     return null;
   }
@@ -83,13 +116,21 @@ export function averageRating(storeId: string) {
 }
 
 export function upsertRating(userId: string, storeId: string, value: number) {
-  const existing = db.ratings.find((r) => r.userId === userId && r.storeId === storeId);
+  const existing = db.ratings.find(
+    (r) => r.userId === userId && r.storeId === storeId,
+  );
   if (existing) {
     existing.value = value;
     existing.createdAt = Date.now();
     return existing;
   }
-  const rating: Rating = { id: uid("rat"), userId, storeId, value, createdAt: Date.now() };
+  const rating: Rating = {
+    id: uid("rat"),
+    userId,
+    storeId,
+    value,
+    createdAt: Date.now(),
+  };
   db.ratings.push(rating);
   return rating;
 }

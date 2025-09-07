@@ -11,7 +11,9 @@ export default function OwnerDashboard() {
     setData(res.data);
   };
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    load();
+  }, []);
 
   return (
     <div className="space-y-6">
@@ -25,24 +27,37 @@ export default function OwnerDashboard() {
                 <p className="text-sm text-muted-foreground">{s.address}</p>
               </div>
               <div className="text-right">
-                <div className="text-2xl font-bold">{Number(s.avgRating || 0).toFixed(1)}</div>
-                <div className="text-xs text-muted-foreground">{s.ratings.length} ratings</div>
+                <div className="text-2xl font-bold">
+                  {Number(s.avgRating || 0).toFixed(1)}
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  {s.ratings.length} ratings
+                </div>
               </div>
             </div>
             <div className="mt-4 space-y-2">
               {s.ratings.length === 0 && (
-                <div className="text-sm text-muted-foreground">No ratings yet.</div>
+                <div className="text-sm text-muted-foreground">
+                  No ratings yet.
+                </div>
               )}
               {s.ratings.map((r: any) => (
-                <div key={r.id} className="flex items-center justify-between rounded-lg border px-3 py-2">
-                  <div className="text-sm text-muted-foreground">{new Date(r.createdAt).toLocaleDateString()}</div>
+                <div
+                  key={r.id}
+                  className="flex items-center justify-between rounded-lg border px-3 py-2"
+                >
+                  <div className="text-sm text-muted-foreground">
+                    {new Date(r.createdAt).toLocaleDateString()}
+                  </div>
                   <div className="text-sm font-medium">{r.value} / 5</div>
                 </div>
               ))}
             </div>
           </div>
         ))}
-        {!data?.stores?.length && <p className="text-muted-foreground">No stores yet.</p>}
+        {!data?.stores?.length && (
+          <p className="text-muted-foreground">No stores yet.</p>
+        )}
       </div>
     </div>
   );

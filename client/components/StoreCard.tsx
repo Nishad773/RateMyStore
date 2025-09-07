@@ -14,7 +14,15 @@ interface StoreCardProps {
 }
 
 export default function StoreCard(props: StoreCardProps) {
-  const { id, name, address, avgRating = 0, ratingsCount = 0, canRate, userId } = props;
+  const {
+    id,
+    name,
+    address,
+    avgRating = 0,
+    ratingsCount = 0,
+    canRate,
+    userId,
+  } = props;
   const [value, setValue] = useState<number>(Math.round(avgRating));
   const [avg, setAvg] = useState<number>(avgRating);
   const [count, setCount] = useState<number>(ratingsCount);
@@ -39,7 +47,9 @@ export default function StoreCard(props: StoreCardProps) {
       <div className="mt-4 flex items-center justify-between">
         <StarRating value={value} onChange={setValue} readOnly={!canRate} />
         {canRate && (
-          <Button onClick={submit} className="ml-3">Submit</Button>
+          <Button onClick={submit} className="ml-3">
+            Submit
+          </Button>
         )}
       </div>
     </div>
