@@ -24,13 +24,19 @@ export default function StarRating({
     >
       {[1, 2, 3, 4, 5].map((i) => {
         const active = i <= current;
+        const isHover = hover === i;
         return (
           <button
             key={i}
             type="button"
             aria-checked={i === value}
+            aria-label={`${i} star${i > 1 ? "s" : ""}`}
             role="radio"
-            className={cn("transition-colors", readOnly && "cursor-default")}
+            className={cn(
+              "transition-transform duration-150",
+              isHover && !readOnly && "scale-110",
+              readOnly && "cursor-default",
+            )}
             onMouseEnter={() => !readOnly && setHover(i)}
             onMouseLeave={() => !readOnly && setHover(null)}
             onClick={() => !readOnly && onChange?.(i)}
